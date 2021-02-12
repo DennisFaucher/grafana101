@@ -10,7 +10,7 @@ Well, two reasons actually:
 # How
 
 ## Installing the core software
-The "Starter Kit" for Grafana dashboards requires the installation of Grafana, Telegraf, and InfluxDB. Telegraf sends metrics to the Telegraf time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
+The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the Telegraf time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
 
 ## Parts List
 # Thank You
