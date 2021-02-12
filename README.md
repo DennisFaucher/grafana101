@@ -1,2 +1,1 @@
-# My Initial Journey with Grafana, 
-# InfluxDB, Prometheus, VMware, Linux, Chickens
+# My Initial Journey with Grafana, <br> InfluxDB, Prometheus, VMware, Linux, Chickens
