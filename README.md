@@ -1,5 +1,5 @@
-# My Initial Journey with Grafana, <br> InfluxDB, Prometheus, VMware, Linux, Chickens
-![Grafana Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Grafana%20Main%20-%20Dodge.jpg)
+# My Initial Journey with Grafana, <br> InfluxDB, Prometheus, VMware, Linux, Chickens <br> Part I
+![Grafana Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Grafana%20-%203%20Streams%20-%20Dodge.jpg)
 
 # Why
 
