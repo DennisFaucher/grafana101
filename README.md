@@ -19,6 +19,8 @@ The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](
 When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top. of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up. If you would like to try this installation option, there is a great tutorial [here](https://pimylifeup.com/raspberry-pi-prometheus/). 
 
 ### CentOS VM
+![CentOS Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/CentOS-160W.png)
+
 Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinstall everything in a CentOS VM on ESXi on an Intel NUC. This has been much morereliable. In Jorge de la Cruz's [blog post](https://jorgedelacruz.uk/2018/10/01/looking-for-the-perfect-dashboard-influxdb-telegraf-and-grafana-part-xii-native-telegraf-plugin-for-vsphere/) on Grafana & VMware, there is a [link](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) for the installation of the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) which is very good. Also a [link](http://docs.grafana.org/installation/) on how to add Grafana to TICK.
 
 
