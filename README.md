@@ -1,4 +1,4 @@
-# My Initial Journey with Grafana, <br> InfluxDB, Prometheus, VMware, Linux, Chickens <br> Part I
+# My Initial Journey with Grafana, <br> InfluxDB, Prometheus, VMware, Linux, Chickens <br> Part I - The Basics
 ![Grafana Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Grafana%20-%203%20Streams%20-%20Dodge.jpg)
 
 # Why
@@ -12,7 +12,9 @@ Well, two reasons actually:
 ## Installing the core software
 The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
 
-## Parts List
+## Installation Options
+### Raspberry Pi OS VM
+When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top. of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often
 
 
 # Thank You
