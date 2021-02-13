@@ -9,6 +9,14 @@ Well, two reasons actually:
 
 # How
 
+## Parts List
+
+* Grafana
+* Telegraf
+* InfluxDB
+* Chronograf
+* Kapacitor
+
 ## Installing the core software
 The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
 
