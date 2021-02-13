@@ -11,6 +11,7 @@ Well, two reasons actually:
 
 ## Parts List
 
+* Some OS (You'll probably find the most help for Linux)
 * Grafana
 * Telegraf
 * InfluxDB
