@@ -1,4 +1,4 @@
-# My Initial Journey with Grafana, Telegraf,<br> InfluxDB, Prometheus, VMware, Linux, Chickens <br> Part I - The Basics
+# My Initial Journey with Grafana, Telegraf,<br> InfluxDB, Prometheus to Monitor VMware, Linux, Chickens <br> Part I - The Basics
 ![Grafana Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Grafana%20-%203%20Streams%20-%20Dodge.jpg)
 
 # Why
