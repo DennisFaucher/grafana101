@@ -63,12 +63,14 @@ Find the [http] section and set auth-enabled to true. Save the file and exit the
       # bind-address = ":8086"
 
       # Determines whether HTTP authentication is enabled.
-      auth-enabled = **true**
+      auth-enabled = true
 ...
 
 $ sudo systemctl restart influxdb
 
 ````
+
+#### Install & Configure Telegraf
 
 
 # Thank You
