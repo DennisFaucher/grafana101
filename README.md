@@ -11,12 +11,13 @@ Well, two reasons actually:
 
 ## Parts List
 
-* Some OS (You'll probably find the most help for Linux)
-* Grafana
-* Telegraf
-* InfluxDB
-* Chronograf
-* Kapacitor
+* An OS (You'll probably find the most help for Linux)
+* Grafana (Dashboards and graphs)
+* Telegraf (Metrics collector)
+* InfluxDB (Time series database)
+* Chronograf (InfluxDB simple dashboards. I use Grafana dashboards instead.)
+* Kapacitor (InfluxDB alerts. I use Grafana alerts instead)
+* Prometheus (Another Time Series Database. Not covered in Part I)
 
 ## Installing the core software
 The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
