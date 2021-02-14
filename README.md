@@ -10,6 +10,7 @@ Well, two reasons actually:
 # How
 
 ## Parts List
+![Rube Goldberg](https://github.com/DennisFaucher/grafana101/blob/main/images/Rube_Goldberg's__Self-Operating_Napkin__(cropped).gif)
 
 * An OS (You'll probably find the most help for Linux)
 * Grafana (Dashboards and graphs)
