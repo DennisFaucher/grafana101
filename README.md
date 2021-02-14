@@ -34,13 +34,39 @@ When I started my journey, I was looking for software that would run in a Raspbe
 
 Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinstall everything in a Ubuntu VM on ESXi on an Intel NUC. The NUC VM has been much more reliable. In Jorge de la Cruz's [blog post](https://jorgedelacruz.uk/2018/10/01/looking-for-the-perfect-dashboard-influxdb-telegraf-and-grafana-part-xii-native-telegraf-plugin-for-vsphere/) on Grafana & VMware, there is a [link](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) for the installation of the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) and also a [link](http://docs.grafana.org/installation/) on how to add Grafana to TICK. As you can see in the Parts List, not all pieces of the TICK stack are needed, but the tutorial is very helpful in installing the parts you want. Here is a brief summary of the installation step from those posts for the parts I am using:
 
-#### Install InfluxDB
+#### Install & Configure InfluxDB
 
 ````[bash]
 $ curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 $ source /etc/lsb-release
 $ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 
+$ sudo apt-get update
+$ sudo apt-get install influxdb
+$ sudo systemctl start influxdb
+$ sudo systemctl status influxdb (Check and fix any issues)
+$ sudo systemctl enable influxdb
+
+$ influx (If not found "sudo apt install influxdb-client")
+> CREATE USER "sammy" WITH PASSWORD 'sammy_admin' WITH ALL PRIVILEGES
+> show users (Check that the sammy user is there)
+> exit
+
+$ sudo vi /etc/influxdb/influxdb.conf (Or nano. Or vim. Your preference)
+Find the [http] section and set auth-enabled to true. Save the file and exit the editor.
+...
+    [http]
+      # Determines whether HTTP endpoint is enabled.
+      # enabled = true
+
+      # The bind address used by the HTTP service.
+      # bind-address = ":8086"
+
+      # Determines whether HTTP authentication is enabled.
+      auth-enabled = **true**
+...
+
+$ sudo systemctl restart influxdb
 
 ````
 
