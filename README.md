@@ -24,15 +24,25 @@ Well, two reasons actually:
 The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
 
 ## Installation Options
-### Raspberry Pi OS VM
+### Raspberry Pi OS VM Option
 ![Raspberry Pi Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/rPi-160W.jpeg)
 
-When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top. of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up, so I moved on to a Ubuntu VM on Intel NUC. If you would like to try this rpi OS VM installation option, there is a great tutorial [here](https://pimylifeup.com/raspberry-pi-prometheus/). 
+When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up, so I moved on to a Ubuntu VM on Intel NUC. If you would like to try this rPi OS VM installation option, there is a great tutorial [here](https://pimylifeup.com/raspberry-pi-prometheus/). 
 
-### Ubuntu VM
+### Ubuntu VM Option
 ![Ubuntu Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/Ubuntu160.png)
 
-Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinstall everything in a Ubuntu VM on ESXi on an Intel NUC. This has been much more reliable. In Jorge de la Cruz's [blog post](https://jorgedelacruz.uk/2018/10/01/looking-for-the-perfect-dashboard-influxdb-telegraf-and-grafana-part-xii-native-telegraf-plugin-for-vsphere/) on Grafana & VMware, there is a [link](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) for the installation of the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) and also a [link](http://docs.grafana.org/installation/) on how to add Grafana to TICK.
+Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinstall everything in a Ubuntu VM on ESXi on an Intel NUC. The NUC VM has been much more reliable. In Jorge de la Cruz's [blog post](https://jorgedelacruz.uk/2018/10/01/looking-for-the-perfect-dashboard-influxdb-telegraf-and-grafana-part-xii-native-telegraf-plugin-for-vsphere/) on Grafana & VMware, there is a [link](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) for the installation of the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) and also a [link](http://docs.grafana.org/installation/) on how to add Grafana to TICK. As you can see in the Parts List, not all pieces of the TICK stack are needed, but the tutorial is very helpful in installing the parts you want. Here is a brief summary of the installation step from those posts for the parts I am using:
+
+#### Install InfluxDB
+
+````[bash]
+$ curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+$ source /etc/lsb-release
+$ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+
+````
 
 
 # Thank You
