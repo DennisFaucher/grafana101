@@ -102,7 +102,7 @@ $ sudo systemctl enable telegraf
 ````
 
 Congratulations. Telegraf is now running and sending metrics from your Linux host to the InfluxDB for use by Grafana.
-Your /etc/telegraf/telegraf.conf should, by default, have these sections uncommented and these 
+Your /etc/telegraf/telegraf.conf should, by default, have these sections uncommented and these metrics should be in InfluxDB.
 
 ````[bash]
 [[inputs.cpu]]
