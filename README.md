@@ -176,6 +176,10 @@ Default login is admim/admin and you will be prompted to change your password
 
 ![Grafana Login](https://github.com/DennisFaucher/grafana101/blob/main/images/GrafanaMain.png)
 
+Define the InfluxDB as a data source
+
+![Data Source](https://github.com/DennisFaucher/grafana101/blob/main/images/Data%20Source.png)
+
 
 
 
