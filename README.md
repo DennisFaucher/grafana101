@@ -27,7 +27,7 @@ The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](
 ### Raspberry Pi OS VM Option
 ![Raspberry Pi Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/rPi-160W.jpeg)
 
-When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up, so I moved on to a Ubuntu VM on Intel NUC. If you would like to try this rPi OS VM installation option, there is a great tutorial [here](https://pimylifeup.com/raspberry-pi-prometheus/). 
+When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up, so I moved on to a Ubuntu VM on Intel NUC. If you would like to try this rPi OS VM installation option, there is a great tutorial [here](https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/). 
 
 ### Ubuntu VM Option
 ![Ubuntu Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/Ubuntu160.png)
@@ -101,8 +101,66 @@ $ sudo systemctl status telegraf (Check and fix any issues)
 $ sudo systemctl enable telegraf
 ````
 
-Congratulations. Telegraf is now running and sending metrics from your Linux host to the InfluxDB.
+Congratulations. Telegraf is now running and sending metrics from your Linux host to the InfluxDB for use by Grafana.
+Your /etc/telegraf/telegraf.conf should, by default, have these sections uncommented and these 
 
+````[bash]
+[[inputs.cpu]]
+[[inputs.disk]]
+[[inputs.diskio]]
+[[inputs.kernel]]
+[[inputs.mem]]
+[[inputs.processes]]
+[[inputs.swap]]
+[[inputs.system]]
+````
 
+You can test this by displaying the data in the Influx data base with these commands:
+
+````[bash]
+$ influx -username sammy -password sammy_admin
+> use telegraf
+> show measurements
+name: measurements
+name
+----
+cpu
+disk
+diskio
+kernel
+mem
+swap
+system
+
+> show field keys from cpu
+name: cpu
+fieldKey         fieldType
+--------         ---------
+usage_guest      float
+usage_guest_nice float
+usage_idle       float
+usage_iowait     float
+usage_irq        float
+usage_nice       float
+usage_softirq    float
+usage_steal      float
+usage_system     float
+usage_user       float
+
+> select "usage_idle", "host" from "cpu"  limit 10
+name: cpu
+time                usage_idle        host
+----                ----------        ----
+1609336970000000000 98.43434343434373 ubuntu-nuc
+1609336970000000000 97.57330637007071 ubuntu-nuc
+1609336970000000000 99.29364278506394 ubuntu-nuc
+1609336980000000000 98.20089955022426 ubuntu-nuc
+1609336980000000000 97.80000000000194 ubuntu-nuc
+1609336980000000000 98.50149850149987 ubuntu-nuc
+1609336990000000000 99.45054945055108 ubuntu-nuc
+1609336990000000000 99.5004995004977  ubuntu-nuc
+1609336990000000000 99.50049950049996 ubuntu-nuc
+1609337000000000000 99.5995995995977  ubuntu-nuc
+````
 
 # Thank You
