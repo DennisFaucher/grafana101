@@ -165,4 +165,19 @@ time                usage_idle        host
 1609337000000000000 99.5995995995977  ubuntu-nuc
 ````
 
+#### Connect Grafana to InfluxDB
+
+Point your browser to your new Grafana instance: 
+````[bash]
+http://[hostname]:3000
+````
+
+Default login is admim/admin and you will be prompted to change your password
+
+![Grafana Login](https://github.com/DennisFaucher/grafana101/blob/main/images/GrafanaMain.png)
+
+
+
+
+
 # Thank You
