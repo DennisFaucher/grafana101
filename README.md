@@ -119,7 +119,9 @@ You can test this by displaying the data in the Influx data base with these comm
 
 ````[bash]
 $ influx -username sammy -password sammy_admin
+
 > use telegraf
+
 > show measurements
 name: measurements
 name
