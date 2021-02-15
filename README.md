@@ -72,6 +72,10 @@ $ sudo systemctl restart influxdb
 ````
 
 #### Install & Configure Telegraf
+![Telegraf](https://github.com/DennisFaucher/grafana101/blob/main/images/telegraf.png)
+
+````[bash]
+````
 
 
 # Thank You
