@@ -75,7 +75,34 @@ $ sudo systemctl restart influxdb
 ![Telegraf](https://github.com/DennisFaucher/grafana101/blob/main/images/telegraf.png)
 
 ````[bash]
+$ sudo apt-get install telegraf
+$ sudo vi /etc/telegraf/telegraf.conf (Or nano. Or vim. Your preference)
+Find the [outputs.influxdb] section and provide the username and password. Save the file and exit the editor.
+
+[[outputs.influxdb]]
+  ## The full HTTP or UDP endpoint URL for your InfluxDB instance.
+  ## Multiple urls can be specified as part of the same cluster,
+  ## this means that only ONE of the urls will be written to each interval.
+  # urls = ["udp://localhost:8089"] # UDP endpoint example
+  urls = ["http://localhost:8086"] # required
+  ## The target database for metrics (telegraf will create it if not exists).
+  database = "telegraf" # required
+
+  ...
+
+  ## Write timeout (for the InfluxDB client), formatted as a string.
+  ## If not provided, will default to 5s. 0s means no timeout (not recommended).
+  timeout = "5s"
+  username = "sammy"
+  password = "sammy_admin"
+  
+$ sudo systemctl restart telegraf
+$ sudo systemctl status telegraf (Check and fix any issues)
+$ sudo systemctl enable telegraf
 ````
+
+Congratulations. Telegraf is now running and sending metrics from your Linux host to the InfluxDB.
+
 
 
 # Thank You
