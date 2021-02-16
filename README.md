@@ -188,6 +188,9 @@ Provide the database name (telegraf), username (sammy) and password (sammy_admin
 
 ![Influx Settings 02](https://github.com/DennisFaucher/grafana101/blob/main/images/Influx%20Settings%2002.png)
 
+#### Try Out a Dashboard!
+
+There are lots of very nice pre-built dashboards at [this site](https://grafana.com/grafana/dashboards). Once you find one, you can import the dashboard right into your Grafana instance using the dashboard ID. I suggest trying [this Linux dashboard](https://grafana.com/grafana/dashboards/2381) with ID 2381
 
 
 # Thank You
