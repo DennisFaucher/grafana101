@@ -184,7 +184,7 @@ Name the source InfluxDB and change the IP address to the IP or name of your Inf
 
 ![Influx Settings 01](https://github.com/DennisFaucher/grafana101/blob/main/images/Influx%20Settings%2001.png)
 
-Provide the username and password you created (sammy/sammy_admin), Save & Test
+Provide the database name (telegraf), username (sammy) and password (sammy_admin) you created, Save & Test
 
 ![Influx Settings 02](https://github.com/DennisFaucher/grafana101/blob/main/images/Influx%20Settings%2002.png)
 
