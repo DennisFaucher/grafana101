@@ -180,6 +180,9 @@ Define the InfluxDB as a data source
 
 ![Data Source](https://github.com/DennisFaucher/grafana101/blob/main/images/Data%20Source.png)
 
+Name the source InfluxDB and change the IP address to the IP or name of your InfluxDB server
+
+![Influx Settings 01](https://github.com/DennisFaucher/grafana101/blob/main/images/Influx%20Settings%2001.png)
 
 
 
