@@ -79,7 +79,8 @@ $ sudo systemctl restart influxdb
 ````[bash]
 $ sudo apt-get install telegraf
 $ sudo vi /etc/telegraf/telegraf.conf (Or nano. Or vim. Your preference)
-Find the [outputs.influxdb] section and provide the username and password. Save the file and exit the editor.
+Find the [outputs.influxdb] section and provide the username and password. 
+Save the file and exit the editor.
 
 [[outputs.influxdb]]
   ## The full HTTP or UDP endpoint URL for your InfluxDB instance.
