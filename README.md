@@ -204,4 +204,8 @@ Choose InfluxDB as the data source for the dashboard and click "Import"
 
 ![Final Import](https://github.com/DennisFaucher/grafana101/blob/main/images/Dashboards%20-%20Final%20Import.png)
 
+You will now have this dashboard and can choose which Linux host whose metrics to use
+
+![Linux Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Linux%20Dashboard.png)
+
 # Thank You
