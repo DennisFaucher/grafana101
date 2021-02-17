@@ -192,5 +192,7 @@ Provide the database name (telegraf), username (sammy) and password (sammy_admin
 
 There are lots of very nice pre-built dashboards at [this site](https://grafana.com/grafana/dashboards). Once you find one, you can import the dashboard right into your Grafana instance using the dashboard ID. I suggest trying [this Linux dashboard](https://grafana.com/grafana/dashboards/2381) with ID 2381 that works with metrics you have already collected.
 
+First, choose Dashboards > Manage
+
 
 # Thank You
