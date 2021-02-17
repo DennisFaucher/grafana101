@@ -209,3 +209,5 @@ You will now have this dashboard and can choose which Linux host whose metrics t
 ![Linux Dashboard](https://github.com/DennisFaucher/grafana101/blob/main/images/Linux%20Dashboard.png)
 
 # Thank You
+
+Thank you for taking the time to read this post. Part II will cover how to add VMware metrics and VMware dashboards. Feel free to contact me with any questions or improvements.
