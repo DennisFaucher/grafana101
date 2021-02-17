@@ -196,5 +196,12 @@ First, choose Dashboards > Manage
 
 ![Manage](https://github.com/DennisFaucher/grafana101/blob/main/images/Dashboards%20-%20Manage.png)
 
+Click "Import" and type the dashboard ID (2381) that you would like to import. Then click Load.
+
+![Import](https://github.com/DennisFaucher/grafana101/blob/main/images/Dashboards%20-%20Import.png)
+
+Choose InfluxDB as the data source for the dashboard and click "Import"
+
+![Final Import](https://github.com/DennisFaucher/grafana101/blob/main/images/Dashboards%20-%20Final%20Import.png)
 
 # Thank You
