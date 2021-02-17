@@ -194,5 +194,7 @@ There are lots of very nice pre-built dashboards at [this site](https://grafana.
 
 First, choose Dashboards > Manage
 
+![Manage](https://github.com/DennisFaucher/grafana101/blob/main/images/Dashboards%20-%20Manage.png)
+
 
 # Thank You
