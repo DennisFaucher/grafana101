@@ -21,13 +21,13 @@ Well, two reasons actually:
 * Prometheus (Another Time Series Database. Not covered in Part I)
 
 ## Installing the core software
-The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
+The "Starter Kit" for Grafana dashboards requires the installation of [Grafana](https://grafana.com/oss/grafana/), [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), and [InfluxDB](https://www.influxdata.com/) (aka TIG). Telegraf sends metrics to the InfluxDB time series database and Grafana displays the InfluxDB (and other) data as beautiful graphs.
 
 ## Installation Options
 ### Raspberry Pi OS VM Option
 ![Raspberry Pi Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/rPi-160W.jpeg)
 
-When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 IO bus and the VM would often lock up, so I moved on to a Ubuntu VM on Intel NUC. If you would like to try this rPi OS VM installation option, there is a great tutorial [here](https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/). 
+When I started my journey, I was looking for software that would run in a Raspberry Pi OS VM on top of ESXi-ARM on a Raspberry Pi 4. All the feeds to InfluxDB became a bit much for the rPi4 I/O bus and the VM would often lock up, so I moved on to a Ubuntu VM on an Intel NUC. If you would like to try this rPi OS VM installation option, there is a great tutorial [here](https://nwmichl.net/2020/07/14/telegraf-influxdb-grafana-on-raspberrypi-from-scratch/). 
 
 ### Ubuntu VM Option
 ![Ubuntu Logo](https://github.com/DennisFaucher/grafana101/blob/main/images/Ubuntu160.png)
@@ -40,7 +40,8 @@ Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinst
 ````[bash]
 $ curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 $ source /etc/lsb-release
-$ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+$ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" \
+| sudo tee /etc/apt/sources.list.d/influxdb.list
 
 $ sudo apt-get update
 $ sudo apt-get install influxdb
@@ -54,7 +55,8 @@ $ influx (If not found "sudo apt install influxdb-client")
 > exit
 
 $ sudo vi /etc/influxdb/influxdb.conf (Or nano. Or vim. Your preference)
-Find the [http] section and set auth-enabled to true. Save the file and exit the editor.
+Find the [http] section and set auth-enabled to true. 
+Save the file and exit the editor.
 ...
     [http]
       # Determines whether HTTP endpoint is enabled.
