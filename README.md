@@ -34,6 +34,24 @@ When I started my journey, I was looking for software that would run in a Raspbe
 
 Since my rPi OS VM kept getting overwhelmed with data feeds, I decided to reinstall everything in a Ubuntu VM on ESXi on an Intel NUC. The NUC VM has been much more reliable. In Jorge de la Cruz's [blog post](https://jorgedelacruz.uk/2018/10/01/looking-for-the-perfect-dashboard-influxdb-telegraf-and-grafana-part-xii-native-telegraf-plugin-for-vsphere/) on Grafana & VMware, there is a [link](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) for the installation of the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) and also a [link](http://docs.grafana.org/installation/) on how to add Grafana to TICK. As you can see in the Parts List, not all pieces of the TICK stack are needed, but the tutorial is very helpful in installing the parts you want. Here is a brief summary of the installation step from those posts for the parts I am using:
 
+#### Install Grafana
+![Grafana](https://github.com/DennisFaucher/grafana101/blob/main/images/Grafana.png)
+
+I ended up using the instrustions from [this](https://grafana.com/docs/grafana/latest/installation/debian/) web site.
+
+````[bash]
+$ sudo apt-get install -y apt-transport-https
+$ sudo apt-get install -y software-properties-common wget
+$ wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+$ echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+$ sudo apt-get update
+$ sudo apt-get install grafana
+$ sudo systemctl daemon-reload
+$ sudo systemctl start grafana-server
+$ sudo systemctl status grafana-server
+$ sudo systemctl enable grafana-server.service
+````
+
 #### Install & Configure InfluxDB
 ![InfluxDB](https://github.com/DennisFaucher/grafana101/blob/main/images/InfluxDB.png)
 
